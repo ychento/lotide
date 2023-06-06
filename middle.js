@@ -1,20 +1,10 @@
-const eqArrays = function(array1, array2){
-  for (let i=0; i < array1.length; i++) {
-    if (array1[i]!== array2[i]){
-      return false;
-    }
-  }
-  return true;
-}
+// TEST/ASSERTION FUNCTIONS
+const eqArrays = require('../lotide/eqArrays');
  
-const assertArraysEqual = function(arrays1, arrays2) {
-  if (eqArrays(arrays1, arrays2)) {
-    console.log(`✅✅✅ Assertion Passed: [${arrays1}] === [${arrays2}]`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: [${arrays1}] !== [${arrays2}]`);
-  }
-};
+const assertArraysEqual = require('../lotide/assertArraysEqual');
 
+
+// ACTUAL FUNCTION
 const middle = function(array) {
   if (array.length <= 2) {
     return []
@@ -28,5 +18,9 @@ const middle = function(array) {
 }
 
 
+// TEST CODE
 const numbers = [1, 2, 3, 4, 5, 6];
 return (middle(numbers));
+
+
+module.exports = middle
