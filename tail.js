@@ -23,10 +23,10 @@ const tail = function(array) {
   return array.splice(1);
 }
 
-console.log(eqArrays(tail([5,6,7]), [6,7]));
-console.log(eqArrays(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]));
 
 
+
+module.exports = tail;
 
 // const assertEqual = function(actual, expected) {
 //   if (actual === expected) {
