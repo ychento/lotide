@@ -18,9 +18,12 @@ const eqArrays = function(array1, array2){
 
 
 const eqObjects = function(object1, object2) {
+  // provide all the keys in object1
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
 
+
+  // check key length
   if (keys1.length !== keys2.length) {
     return false;
   }
@@ -29,10 +32,12 @@ const eqObjects = function(object1, object2) {
     const value1 = object1[key];
     const value2 = object2[key];
     
+    // compare item inside array
     if (Array.isArray(value1) && Array.isArray(value2)) {
       if (!eqArrays(value1, value2)) {
         return false;
       }
+    // compare string only (not an array)
     } else if (value1 !== value2) {
       return false;
     }
@@ -45,6 +50,7 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+// {color: ["red", "blue"]} value is array
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject= { size: "medium", color: "red" };
